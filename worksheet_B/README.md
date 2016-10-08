@@ -56,3 +56,5 @@ IF correctanswer is False
 
 ELSE
 	DISPLAY 'Well done!
+	
+https://cloud.githubusercontent.com/assets/22060783/19214237/694f8968-8d76-11e6-998b-c2ede6d8c387.png	
