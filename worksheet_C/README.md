@@ -8,7 +8,7 @@ C)	The algorithm is still correct; the procedure now only runs through j as far 
 
 D)	The algorithm will run approximately twice as fast because the procedure no longer needs to perform as many iterations. The procedure no longer checks the same two values against each other more than once and no longer checks a value against itself. Overall this roughly halves the number of iterations.
 
-E)	The time complexity is now
+E)	E)	The time complexity is still quadratic as doubling n would roughly quadruple the amount of iterations required.
 
 F)	The time complexity of Python’s built-in [1] SORT () function is O (n log n).
 
@@ -20,5 +20,5 @@ I)	A programmer may choose to use the slower procedure rather than the faster be
 
 Reference List:
 
-[1] B. Rocky (2015, June. 15). “Time Complexity”. Python Wiki. [Online]. Available: https://wiki.python.org/moin/TimeComplexity [Accessed: Oct. 23. 2016]
+[1] ICS, UCI “Complexity of Python Operations”. www.ics.uci.edu. [Online]. Available: https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt [Accessed: Oct. 23. 2016]
 
