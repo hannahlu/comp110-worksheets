@@ -10,7 +10,7 @@ D)	The algorithm will run approximately twice as fast because the procedure no l
 
 E)	The time complexity is now
 
-F)	The time complexity of Python’s built-in [1] sort function is O (n log n).
+F)	The time complexity of Python’s built-in [1] SORT () function is O (n log n).
 
 G)	The procedure’s computational complexity is O (n log n); the procedure uses the SORT () function with the time complexity of O (n log n). For large input values the addition of a for loop with time complexity O(n) would not make a significant difference, and therefore the procedure overall can still be said to have a time complexity of O (n log n).
 
