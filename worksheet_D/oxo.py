@@ -32,7 +32,7 @@ class OxoBoard:
                     squares -= 1
                 if squares == 0:
                     return True
-            return False
+        return False
 
 
     def get_winner(self):
