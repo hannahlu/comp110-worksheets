@@ -1,5 +1,6 @@
 class OxoBoard:
     def __init__(self):
+        """Define board coordinates and set values to 0"""
         self.oxoboard = {(0, 0): 0, (1, 0): 0, (2, 0): 0,
                          (0, 1): 0, (1, 1): 0, (2, 1): 0,
                          (0, 2): 0, (1, 2): 0, (2, 2): 0}
@@ -26,7 +27,7 @@ class OxoBoard:
         """ If there are still empty squares on the board, return False.
             If there are no empty squares, return True. """
         squares = 9
-        for i in xrange(0, 3):             # Checks through squares to see if full
+        for i in xrange(0, 3):                                                                                           # Checks through each square to see if empty
             for j in xrange(0, 3):
                 if self.oxoboard[i, j] > 0:
                     squares -= 1
