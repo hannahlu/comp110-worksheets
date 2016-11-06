@@ -29,7 +29,7 @@ class OxoBoard:
         squares = 9
         for i in xrange(0, 3):             # Checks through squares to see if full
             for j in xrange(0, 3):
-                if self.board[i, j] > 0:
+                if self.oxoboard[i, j] > 0:
                     squares -= 1
                 if squares == 0:
                     return True
@@ -38,7 +38,7 @@ class OxoBoard:
     def get_winner(self):
         """ If a player has three in a row, return 1 or 2 depending on which player.
             Otherwise, return 0. """
-
+        if 
 
     def show(self):
         """ Display the current board state in the terminal. You should not need to edit this. """
