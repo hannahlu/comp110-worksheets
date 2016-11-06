@@ -1,20 +1,16 @@
-import pygame, sys
-from pygame.locals import *
-
-# set up pygame
-pygame.init()
-
 class OxoBoard:
     def __init__(self):
-        self.oxoboard = {(0, 0): 0,(1, 0): 0,(2, 0): 0,
-                         (0, 1): 0,(1, 1): 0, (2, 1): 0,
-                         (0, 2): 0,(1, 2): 0,(2, 2): 0}
+        self.oxoboard = {(0, 0): 0, (1, 0): 0, (2, 0): 0,
+                         (0, 1): 0, (1, 1): 0, (2, 1): 0,
+                         (0, 2): 0, (1, 2): 0, (2, 2): 0}
+
 
     def get_square(self, x, y):
         """ Return 0, 1 or 2 depending on the contents of the specified square. """
         self.x = x
         self.y = y
         return self.oxoboard[x, y]
+
 
     def set_square(self, x, y, mark):
         """ If the specified square is currently empty (0), fill it with mark and return True.
@@ -24,6 +20,7 @@ class OxoBoard:
             return True
         else:
             return False
+
 
     def is_board_full(self):
         """ If there are still empty squares on the board, return False.
@@ -37,33 +34,27 @@ class OxoBoard:
                     return True
             return False
 
+
     def get_winner(self):
         """ If a player has three in a row, return 1 or 2 depending on which player.
             Otherwise, return 0. """
-        if self.oxoboard[0, 0] == self.oxoboard[1, 0]:
-            if self.oxoboard[1, 0] == self.oxoboard[2, 0]:
-                return current_player
-
-        if self.oxoboard[0, 1] == self.oxoboard[1, 1]:
-            if self.oxoboard[1, 1] == self.oxoboard[2, 1]:
-                return current_player
-
-        if self.oxoboard[0, 2] == self.oxoboard[1, 2]:
-            if self.oxoboard[1, 2] == self.oxoboard[2, 2]:
-                return current_player
-
-        if self.oxoboard[0, 0] == self.oxoboard[0, 1]:
-            if self.oxoboard[0, 1] == self.oxoboard[0, 2]:
-                return current_player
-
-        if self.oxoboard[1, 0] == self.oxoboard[1, 1]:
-            if self.oxoboard[1, 1] == self.oxoboard[1, 2]:
-                return current_player
-
-        if self.oxoboard[2, 0] == self.oxoboard[2, 1]:
-            if self.oxoboard[2, 1] == self.oxoboard[2, 2]:
-                return current_player
-
+        if self.oxoboard[0,0] != 0 and self.oxoboard[0,0] == self.oxoboard[1,0] and self.oxoboard[0,0] == self.oxoboard[2,0]:
+            return current_player
+        if self.oxoboard[0,1] != 0 and self.oxoboard[0,1] == self.oxoboard[1,1] and self.oxoboard[0,1] == self.oxoboard[2,1]:
+            return current_player
+        if self.oxoboard[0,2] != 0 and self.oxoboard[0,2] == self.oxoboard[1,2] and self.oxoboard[0,2] == self.oxoboard[2,2]:
+            return current_player
+        if self.oxoboard[0,0] != 0 and self.oxoboard[0,0] == self.oxoboard[0,1] and self.oxoboard[0,0] == self.oxoboard[0,2]:
+            return current_player
+        if self.oxoboard[1,0] != 0 and self.oxoboard[1,0] == self.oxoboard[1,1] and self.oxoboard[1,0] == self.oxoboard[1,2]:
+            return current_player
+        if self.oxoboard[2,0] != 0 and self.oxoboard[2,0] == self.oxoboard[2,1] and self.oxoboard[2,0] == self.oxoboard[2,2]:
+            return current_player
+        if self.oxoboard[0,0] != 0 and self.oxoboard[0,0] == self.oxoboard[1,1] and self.oxoboard[0,0] == self.oxoboard[2,2]:
+            return current_player
+        if self.oxoboard[0,2] != 0 and self.oxoboard[0,2] == self.oxoboard[1,1] and self.oxoboard[0,2] == self.oxoboard[2,0]:
+            return current_player
+        return 0
 
 
     def show(self):
@@ -117,10 +108,10 @@ if __name__ == '__main__':
             winner = board.get_winner()
             if winner != 0:
                 print "Player", winner, "wins!"
-                break   # End the game
+                break  # End the game
             elif board.is_board_full():
                 print "It's a draw!"
-                break   # End the game
+                break  # End the game
             else:
                 # Switch players
                 if current_player == 1:
