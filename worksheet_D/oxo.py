@@ -38,7 +38,6 @@ class OxoBoard:
     def get_winner(self):
         """ If a player has three in a row, return 1 or 2 depending on which player.
             Otherwise, return 0. """
-        if 
 
     def show(self):
         """ Display the current board state in the terminal. You should not need to edit this. """
