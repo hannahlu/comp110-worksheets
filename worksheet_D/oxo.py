@@ -6,7 +6,9 @@ pygame.init()
 
 class OxoBoard:
     def __init__(self):
-        self.oxoboard = {(0, 0): 0,(1, 0): 0,(2, 0): 0,(0, 1): 0,(1, 1): 0, (2, 1): 0,(0, 2): 0,(1, 2): 0,(2, 2): 0}
+        self.oxoboard = {(0, 0): 0,(1, 0): 0,(2, 0): 0,
+                         (0, 1): 0,(1, 1): 0, (2, 1): 0,
+                         (0, 2): 0,(1, 2): 0,(2, 2): 0}
 
     def get_square(self, x, y):
         """ Return 0, 1 or 2 depending on the contents of the specified square. """
@@ -38,6 +40,31 @@ class OxoBoard:
     def get_winner(self):
         """ If a player has three in a row, return 1 or 2 depending on which player.
             Otherwise, return 0. """
+        if self.oxoboard[0, 0] == self.oxoboard[1, 0]:
+            if self.oxoboard[1, 0] == self.oxoboard[2, 0]:
+                return current_player
+
+        if self.oxoboard[0, 1] == self.oxoboard[1, 1]:
+            if self.oxoboard[1, 1] == self.oxoboard[2, 1]:
+                return current_player
+
+        if self.oxoboard[0, 2] == self.oxoboard[1, 2]:
+            if self.oxoboard[1, 2] == self.oxoboard[2, 2]:
+                return current_player
+
+        if self.oxoboard[0, 0] == self.oxoboard[0, 1]:
+            if self.oxoboard[0, 1] == self.oxoboard[0, 2]:
+                return current_player
+
+        if self.oxoboard[1, 0] == self.oxoboard[1, 1]:
+            if self.oxoboard[1, 1] == self.oxoboard[1, 2]:
+                return current_player
+
+        if self.oxoboard[2, 0] == self.oxoboard[2, 1]:
+            if self.oxoboard[2, 1] == self.oxoboard[2, 2]:
+                return current_player
+
+
 
     def show(self):
         """ Display the current board state in the terminal. You should not need to edit this. """
