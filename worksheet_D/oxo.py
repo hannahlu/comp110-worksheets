@@ -1,26 +1,44 @@
+import pygame, sys
+from pygame.locals import *
+
+# set up pygame
+pygame.init()
+
 class OxoBoard:
     def __init__(self):
-        """ The initialiser. Initialise any fields you need here. """
-        raise NotImplementedError("TODO: implement __init__")
+        self.oxoboard = {(0, 0): 0,(1, 0): 0,(2, 0): 0,(0, 1): 0,(1, 1): 0, (2, 1): 0,(0, 2): 0,(1, 2): 0,(2, 2): 0}
 
     def get_square(self, x, y):
         """ Return 0, 1 or 2 depending on the contents of the specified square. """
-        raise NotImplementedError("TODO: implement get_square")
+        self.x = x
+        self.y = y
+        return self.oxoboard[x, y]
 
     def set_square(self, x, y, mark):
         """ If the specified square is currently empty (0), fill it with mark and return True.
             If the square is not empty, leave it as-is and return False. """
-        raise NotImplementedError("TODO: implement set_square")
+        if self.oxoboard[x, y] == 0:
+            self.oxoboard[x, y] = mark
+            return True
+        else:
+            return False
 
     def is_board_full(self):
         """ If there are still empty squares on the board, return False.
             If there are no empty squares, return True. """
-        raise NotImplementedError("TODO: implement is_board_full")
+        squares = 9
+        for i in xrange(0, 3):             # Checks through squares to see if full
+            for j in xrange(0, 3):
+                if self.board[i, j] > 0:
+                    squares -= 1
+                if squares == 0:
+                    return True
+            return False
 
     def get_winner(self):
         """ If a player has three in a row, return 1 or 2 depending on which player.
             Otherwise, return 0. """
-        raise NotImplementedError("TODO: implement get_winner")
+
 
     def show(self):
         """ Display the current board state in the terminal. You should not need to edit this. """
