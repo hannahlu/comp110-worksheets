@@ -1,4 +1,5 @@
 class OxoBoard:
+
     def __init__(self):
         """Define board coordinates and set values to 0"""
         self.oxoboard = {(0, 0): 0, (1, 0): 0, (2, 0): 0,
@@ -27,7 +28,7 @@ class OxoBoard:
         """ If there are still empty squares on the board, return False.
             If there are no empty squares, return True. """
         squares = 9
-        for i in xrange(0, 3):                                                                                           # Checks through each square to see if empty
+        for i in xrange(0, 3):
             for j in xrange(0, 3):
                 if self.oxoboard[i, j] > 0:
                     squares -= 1
@@ -39,6 +40,12 @@ class OxoBoard:
     def get_winner(self):
         """ If a player has three in a row, return 1 or 2 depending on which player.
             Otherwise, return 0. """
+        current_player = 1
+        # Switch players
+        if current_player == 1:
+            current_player = 2
+        else:
+            current_player = 1
         if self.oxoboard[0,0] != 0 and self.oxoboard[0,0] == self.oxoboard[1,0] and self.oxoboard[0,0] == self.oxoboard[2,0]:
             return current_player
         if self.oxoboard[0,1] != 0 and self.oxoboard[0,1] == self.oxoboard[1,1] and self.oxoboard[0,1] == self.oxoboard[2,1]:
