@@ -35,7 +35,7 @@ print(finalResult)
 ```
 
 d) The inner loop completes one less iteration for each iteration of the outer loop. If the inputNumber is 4, the outer loop iterates 4
-times, whilst the inner loop will iterate 4 times, then 3 times, then 2 times, then once. The inner loop multiples the current total, as stored in tempResult, with the value of i, for each outer loop iteration. At each stage, the inner loop multiples the current interger in tempResult with the product of all previous intergers leading up to it.
+times, whilst the inner loop will iterate 4 times, then 3 times, then 2 times, then once. The inner loop multiples the current total, as stored in tempResult, with the value of i, for each outer loop iteration. At each stage, the inner loop multiples the current interger in tempResult with the product of all previous intergers leading up to it and then on the completion of all loops, the total for these multiplcations is stored in finalResult and printed.
 
 e)
 ```
